@@ -9,7 +9,7 @@ async function getEmpleyee( req, res){
         if(!employee){
             res.status(404).json({message : 'employee not found '});
         }
-        res.json(employee)
+        res.status(200).json(employee);
     }catch(err){
         console.log(err);
         res.status(500).json({message : 'Internal server error'});
