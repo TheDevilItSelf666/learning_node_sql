@@ -4,6 +4,7 @@ const db = require('./db');
 app.use(express.json());
 const employeeRoutes = require('./routes/employeeRoutes');
 const companyRoutes = require('./routes/companyRoutes');
+const cookieParser = require("cookie-parser");
 
 
 const logrequest = (req, res, next) => {
@@ -12,6 +13,7 @@ const logrequest = (req, res, next) => {
 }
 
 app.use(logrequest);
+app.use(cookieParser());
 
 
 app.use('/employee',logrequest, employeeRoutes);
